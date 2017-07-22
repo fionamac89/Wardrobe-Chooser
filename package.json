@@ -1,0 +1,22 @@
+{
+  "name": "wardrobechooser",
+  "version": "1.0.0",
+  "description": "Dress for the Weather App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fionamac89/Wardrobe-Chooser.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fionamac89/Wardrobe-Chooser/issues"
+  },
+  "homepage": "https://github.com/fionamac89/Wardrobe-Chooser#readme",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}
