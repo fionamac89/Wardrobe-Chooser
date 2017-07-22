@@ -9,12 +9,10 @@ app.get('/hi', function (req, res) {
         if (error){
             response.status(500);
         }
-        else {
+        else
             weatherJson = JSON.parse(body).query.results.channel.item.forecast[0];
             weatherJson.type = 0;
-            weatherJson.speech = "Yo it looks like today will be a high of " +
-                weatherJson.high + " and a low of " + weatherJson.low + " with " + 
-                weatherJson.text + ". Don't forget to dress for the weather!";
+
             res.json(weatherJson);
         }
 })
@@ -23,3 +21,27 @@ app.get('/hi', function (req, res) {
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!')
 })
+
+function getDressCode(weatherJson){
+    var dressCode = "";
+    var weather = weatherJson.text;
+    switch (weather) {
+        case 'Sunny':
+            dressCode ="Looks like it's going to be sunny today. Make sure to pack your sun care products";
+            break;
+        case 'Cloudy':
+            dressCode ="Looks like it's going to be cloudy today!";
+            break;
+        case 'Rain':
+            dressCode ="Looks like it's going to be rainy today!. Dont forget your umbrella";
+            break;
+        case 'Scatterd Showers':
+            weatherJson.speech ="Looks like it's going to be scattered showers today!. Dont forget your umbrella";
+            break;
+
+        defaultStatus:
+        dressCode = '';
+
+    }
+    return dressCode;
+}
