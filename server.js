@@ -11,6 +11,14 @@ app.get('/hi', function (req, res) {
         }
         else {
             weatherJson = JSON.parse(body).query.results.channel.item.forecast[0];
+            var messages = [
+                    {
+                      "type": 0,
+                      "speech": "Hi Welcome to the Weather App"
+                    }
+                  ]
+            
+            weatherJson.messages = messages;
             res.json(weatherJson);
         }
 })
