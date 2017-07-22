@@ -30,8 +30,10 @@ app.get('/hi', function (req, res) {
 })
 });
 
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!')
+const server = app.listen(process.env.PORT || 3000, function () {
+ 
+  const port = server.address().port ;
+  console.log('Example app listening on port ' + port);
 })
 
 function getDressCode(weatherJson){
