@@ -21,10 +21,7 @@ app.get('/hi', function (req, res) {
             weatherJson = JSON.parse(body).query.results.channel.item.forecast[0];
             weatherJson.location = JSON.parse(body).query.results.channel.location;
             weatherJson.type = 0;
-            weatherJson.speech = "Yo it looks like today will be a high of " +
-                weatherJson.high + " and a low of " + weatherJson.low + ". " +
-                getDressCode(weatherJson);
-                weatherJson.speech = "Yo it looks like today will be a high of " +
+            weatherJson.speech =  "Yo it looks like today in " + weatherJson.location.city + " will be a high of " +
                 weatherJson.high + " and a low of " + weatherJson.low + ". " +
                 getDressCode(weatherJson);
             weatherJson.displayText = weatherJson.speech;
@@ -56,7 +53,7 @@ app.post('/dress', function (req, res) {
             weatherJson = JSON.parse(body).query.results.channel.item.forecast[0];
             weatherJson.location = JSON.parse(body).query.results.channel.location;
             weatherJson.type = 0;
-            weatherJson.speech = "Yo it looks like today will be a high of " +
+            weatherJson.speech =  "Yo it looks like today in " + weatherJson.location.city + " it will be a high of " +
                 weatherJson.high + " and a low of " + weatherJson.low + ". " +
                 getDressCode(weatherJson);
             weatherJson.displayText = weatherJson.speech;
