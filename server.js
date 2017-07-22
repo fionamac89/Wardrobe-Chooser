@@ -39,8 +39,8 @@ app.get('/hi', function (req, res) {
 
 app.post('/dress', function (req, res) {
     var city;
-    if (req.query.city){
-        city = req.query.city;
+    if (req.params.city){
+        city = req.params.city;
     }
     else
     {
