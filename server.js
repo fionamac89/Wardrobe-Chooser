@@ -24,7 +24,13 @@ app.get('/hi', function (req, res) {
             weatherJson.speech = "Yo it looks like today will be a high of " +
                 weatherJson.high + " and a low of " + weatherJson.low + ". " +
                 getDressCode(weatherJson);
-
+                weatherJson.speech = "Yo it looks like today will be a high of " +
+                weatherJson.high + " and a low of " + weatherJson.low + ". " +
+                getDressCode(weatherJson);
+            weatherJson.displayText = weatherJson.speech;
+            weatherJson.data = {};
+            weatherJson.contextOut = [ ];
+            weatherJson.source = " Our weather App"
             res.json(weatherJson);
         }
 })
@@ -53,6 +59,11 @@ app.post('/dress', function (req, res) {
             weatherJson.speech = "Yo it looks like today will be a high of " +
                 weatherJson.high + " and a low of " + weatherJson.low + ". " +
                 getDressCode(weatherJson);
+            weatherJson.displayText = weatherJson.speech;
+            weatherJson.data = {};
+            weatherJson.contextOut = [ ];
+            weatherJson.source = " Our weather App";
+
 
             res.json(weatherJson);
         }
